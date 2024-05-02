@@ -2,9 +2,9 @@ name: Deploy dockerized laravel project with github actions
 
 on:
   push:
-    branches: [ "docker-compose" ]
+    branches: [ "docker-compose-githubactions" ]
   pull_request:
-    branches: [ "docker-compose" ]
+    branches: [ "docker-compose--githubactions" ]
 
 jobs:
   deploy_laravel:
