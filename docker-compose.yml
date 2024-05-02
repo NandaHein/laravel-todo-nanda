@@ -5,10 +5,10 @@ services:
     image: mysql:latest
     container_name: nanda_mysql
     environment:
-      MYSQL_ROOT_PASSWORD: RedHat123$$ 
+      MYSQL_ROOT_PASSWORD: RedHat123$# 
       MYSQL_DATABASE: nanda_db
       MYSQL_USER: nanda
-      MYSQL_PASSWORD: RedHat123$$
+      MYSQL_PASSWORD: RedHat123$
     volumes:
       - type: volume
         source: compose-volume
