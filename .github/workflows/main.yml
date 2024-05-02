@@ -1,10 +1,10 @@
-name: Deploy modifed laravel project with github actions
+name: Deploy dockerized laravel project with github actions
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "docker-compose" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "docker-compose" ]
 
 jobs:
   deploy_laravel:
@@ -15,9 +15,9 @@ jobs:
        - name: SSH Remote Commands & Deploy laravel project
          uses: appleboy/ssh-action@v1.0.3
          with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
+          host: ${{ secrets.DOCKERIZED_HOST }}
+          username: ${{ secrets.DOCKERIZED_USERNAME }}
           key: ${{ secrets.LARAVELGITHUBPRIVATEKEY }}
           script: |
-            bash /home/ubuntu/laravel-app.sh
-            echo "Deployment of laravel completed successfully"
+            bash /home/ubuntu/dockerize-laravel.sh
+            echo "Deployment of dockerized laravel project completed successfully"
